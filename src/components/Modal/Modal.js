@@ -21,12 +21,7 @@ export class ImageModal extends Component {
   closeModal = () => {
     document.removeEventListener('keydown', this.handleEscape);
   };
-  handleEscape = event => {
-    console.log(event.code);
-    if (event.key === 'Escape') {
-      this.props.onClose();
-    }
-  };
+
   render() {
     return (
       <Modal
