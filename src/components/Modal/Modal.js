@@ -23,7 +23,7 @@ export class ImageModal extends Component {
   };
   handleEscape = event => {
     console.log(event.code);
-    if (event.code === 'Escape') {
+    if (event.key === 'Escape') {
       this.props.onClose();
     }
   };
