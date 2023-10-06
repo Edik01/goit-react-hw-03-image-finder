@@ -14,19 +14,14 @@ const customStyles = {
 };
 Modal.setAppElement('#root');
 export class ImageModal extends Component {
-  afterOpenModal = () => {
-    console.log(123);
-    document.addEventListener('keydown', this.handleEscape);
-  };
   closeModal = () => {
-    document.removeEventListener('keydown', this.handleEscape);
+    this.props.onClose();
   };
 
   render() {
     return (
       <Modal
         isOpen={this.props.modalIsOpen}
-        onAfterOpen={this.afterOpenModal}
         onRequestClose={this.closeModal}
         style={customStyles}
         contentLabel="image modal"
